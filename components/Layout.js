@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 
 export default function Layout(props) {
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <Fragment>
       <NavBar />
