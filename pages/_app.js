@@ -1,14 +1,18 @@
 import Layout from "@/components/Layout";
-import NavBar from "@/components/NavBar";
-import "@/styles/globals.css";
-import { Fragment } from "react";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Fragment>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Fragment>
+    <Layout>
+      <Component {...pageProps} />
+      <style jsx global>
+        {`
+          @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+          a {
+            color: grey;
+          }
+        `}
+      </style>
+    </Layout>
   );
 }
