@@ -10,7 +10,7 @@ export default function NavBar() {
         src="/vercel.svg"
         alt="image"
         width={100}
-        height={100}
+        height={20}
         style={{ height: "auto" }}
       />
       {/* <img src="/vercel.svg" /> */}
