@@ -1,26 +1,13 @@
-import NavBar from "@/components/NavBar";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Fragment, useEffect, useState } from "react";
-import Seo from "./Seo";
-
-const API_KEY = "cb97d663128601f0bd425579172816b0";
+import Seo from "../components/Seo";
 
 export default function Home({ results }) {
   const router = useRouter();
 
   const onClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `/movies/${id}`
-    );
+    router.push(`/movies/${title}/${id}`);
   };
 
   const imgStyle = {
@@ -51,15 +38,7 @@ export default function Home({ results }) {
             className="movieImg"
           />
           {/* <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> */}
-          <Link
-            href={{
-              pathname: `/movies/${movie.id}`,
-              query: {
-                title: movie.original_title,
-              },
-            }}
-            as={`/movies/${movie.id}`}
-          >
+          <Link href={`/movies/${movie.original_title}/${movie.id}`}>
             <h4>{movie.original_title}</h4>
           </Link>
         </div>

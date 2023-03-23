@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Seo from "./Seo";
+import Seo from "../components/Seo";
 
 export default function AboutPage() {
   return (
